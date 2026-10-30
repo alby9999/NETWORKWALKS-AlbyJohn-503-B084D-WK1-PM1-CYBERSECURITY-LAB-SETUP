@@ -138,11 +138,97 @@ The repository includes screenshots showing:
 These screenshots show the setup working rather than just describing the configuration.
 
 ---
+## 🛠️ Problems I Faced & How I Fixed Them
+
+Setting up the lab wasn't completely smooth, and I had to troubleshoot a few things along the way. These problems actually helped me understand the setup better.
+
+### 🌐 Websites weren't opening in Kali
+
+At first, Kali had internet access when I tested it from the terminal, but websites weren't opening properly in Firefox.
+
+I checked the Firefox network settings and found that a proxy was enabled. I changed it to **No Proxy**, and the browser started working normally.
+
+**What I learned:** Internet access can work in the terminal while a browser still has its own network configuration issue.
+
+---
+
+### 📁 Shared folder wasn't accessible at first
+
+I created the shared `downloads` folder in VirtualBox, but it wasn't immediately available to my Kali user.
+
+I fixed this by adding the `kali` user to the `vboxsf` group:
+
+```bash
+sudo usermod -aG vboxsf kali
+```
+
+After restarting Kali, I could access the folder at:
+
+```text
+/media/sf_downloads
+```
+
+**What I learned:** Linux permissions and user groups matter when working with shared resources.
+
+---
+
+### 🌐 Setting up the static IP
+
+The lab required Kali to use a specific IP address instead of getting one automatically.
+
+I configured the network manually and assigned Kali:
+
+```text
+IP:       10.0.0.2/24
+Gateway:  10.0.0.1
+DNS:      8.8.8.8 / 1.1.1.1
+```
+
+I then used `ping` to make sure the connection was working.
+
+**What I learned:** This gave me some practical experience with IP addresses, gateways, DNS, and basic network troubleshooting.
+
+---
+
+### 📦 VirtualBox VM registration issue
+
+While working with the Kali VM, I also ran into a VirtualBox issue where the VM was already registered, causing a duplicate UUID/import problem.
+
+Instead of importing another copy, I continued using the Kali VM that was already registered in VirtualBox.
+
+**What I learned:** VirtualBox uses unique identifiers for virtual machines, so trying to register the same VM again can cause conflicts.
+
+---
+
+### 💾 Creating a safe restore point
+
+Before moving on to future cybersecurity labs, I wanted to make sure I had a working version of Kali that I could return to if something went wrong.
+
+Once everything was working, I created a VirtualBox snapshot.
+
+---
+## 🧠 What I Learned
+Taking a snapshot before experimenting can save a lot of time because I can return to a known working setup instead of configuring everything again.
+This lab was more than just installing Kali Linux. Setting everything up myself helped me understand how the different parts of a cybersecurity lab fit together.
+
+A few things I learned along the way:
+
+- How to set up and manage a **virtual machine using VirtualBox**.
+- How a **NAT Network** works and how to create one for a lab environment.
+- How **IP addresses, subnets, gateways, and DNS** are used when configuring a network.
+- How to give Kali Linux a **static IP address** and check whether the configuration is working.
+- How to use basic Linux commands such as `ping`, `ip addr`, and `ip route` to check network connectivity.
+- How to share files between my **Windows system and Kali Linux**.
+- How Linux **user groups and permissions** affect access to shared folders.
+- How VirtualBox features like **clipboard sharing and drag-and-drop** make working between the host and VM easier.
+- Why taking a **snapshot** before starting practical work is useful.
+
+The biggest thing I took away from this lab is that setting up a cybersecurity environment isn't just about installing Kali and opening some tools. Understanding the **network, connectivity, file sharing, and VM configuration** is an important part of building a useful lab.
+---
 
 ## 🚀 What's Next?
 
-This is only the starting point.
-
+This gives me a good starting point for the cybersecurity labs and practical exercises I want to work on next.
 The lab can later be expanded with additional virtual machines and used for:
 
 - Network security practice

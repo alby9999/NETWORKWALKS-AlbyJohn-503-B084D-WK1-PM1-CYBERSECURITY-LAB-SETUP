@@ -223,7 +223,9 @@ A few things I learned along the way:
 - How VirtualBox features like **clipboard sharing and drag-and-drop** make working between the host and VM easier.
 - Why taking a **snapshot** before starting practical work is useful.
 
-The biggest thing I took away from this lab is that setting up a cybersecurity environment isn't just about installing Kali and opening some tools. Understanding the **network, connectivity, file sharing, and VM configuration** is an important part of building a useful lab.
+The biggest thing I took away from this lab is that setting up a cybersecurity environment isn't just about installing Kali and opening some tools. 
+Understanding the network, connectivity, file sharing, and VM configuration** is an important part of building a useful lab.
+
 ---
 
 ## 🚀 What's Next?

@@ -251,3 +251,13 @@ Any security testing should only be performed on systems and networks where you 
 ## 📚 Reference
 
 Setup based on the **WK1-PM1 – Week 1: Project Module 1 – Lab Setup VirtualBox and Kali Linux** lab material.
+
+---
+## 📌 Project Information
+
+| **Field** | **Details** |
+| --------- | ----------- |
+| Author    | Alby John |
+| Project   | Essentials of Cybersecurity & Penetration Testing |
+| Module    | WK1-PM1 |
+| Tools     | Kali Linux 2026.3, Oracle VirtualBox 7.2.22 |
